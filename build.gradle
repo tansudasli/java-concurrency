@@ -27,7 +27,7 @@ java.sourceCompatibility JavaVersion.VERSION_17
 // Define the (full path) main class for the application.
 //application {
 //
-//    mainClass = 'org.example.Main'
+//    mainClass = 'org.core.Main'
 //}
 
 repositories {
