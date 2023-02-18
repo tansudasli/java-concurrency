@@ -1,4 +1,4 @@
-# gradle fundamentals  -  concurrency 
+# java fundamentals  -  concurrency 
 
 This project is about async programming concepts such as 
 - multithreading, 
