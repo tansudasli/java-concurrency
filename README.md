@@ -7,18 +7,37 @@ This project is about async programming concepts such as
 - concurrency, and
 - reactive programming
 
+Roadmap is 
+```
+sync -> async (Future, Forks, CompletableFuture) -> reactive -> loom (sync. style old way multithreading
+```
 
 ## Thread concepts
 ```
 frame problem  - > create  - > start  - > join
 ```
 
-  - pooling
-  - accessing same field :: locking (synchronized), Atomic Ops.
-  - Inter-communication  :: accessing respectively (producer-consumer) :: (wait & notify)
-  - flow (join, sleep)
-  - strategy             :: how to define the problem for multi-threading
-  - computations vs IO
+  - **strategy** (how to define the problem for multi-threading)
+    - dependent vs independent tasks
+    - void vs return something
+    - computations vs IO
+    - long-running vs short-running
+  - **pooling** (better thread efficiency)
+  - **concurrency**
+    - Thread-safety
+      - accessing same field 
+        - lock & synchronized
+        - Atomic classes
+        - concurrent data structures
+        - ThreadLocal<T> (1 obj = 1 thread)
+        - local variables (1 obj = 1 task)
+    - Throttling (semaphore)
+    - Backpressure
+  - **Interruptions**
+    - timeout
+    - flow 
+      - join, sleep
+    - Intercommunication (accessing respectively (producer-consumer) - wait & notify)
 
 
 <details>
@@ -150,7 +169,6 @@ Many frameworks (spring webflux or RxJava) available. Main problem is
   -  lightweight thread == task,  no way to cut this bound!!
   -  creating 1m thread {now, it costs 2tb ram, 20min startup time & context switching}
   -  CompletionState/CompletableFuture
-  - Roadmap is ```sync -> async -> reactive -> sync. style old way multithreading (loom)```
   - So, threads will be two types (platform or virtual)
 
 </details>
