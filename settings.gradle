@@ -1,4 +1,4 @@
 rootProject.name = 'java-concurrency'
-       //if separate modules exist in the project, use include
-include 'core'
+
+//include 'core' //if separate modules exist in the project, use include
 
