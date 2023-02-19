@@ -14,7 +14,7 @@ public class TasksShoutBenchmark {
     private final static int FIRST = 0;
 
     @Benchmark
-    @BenchmarkMode({Mode.AverageTime, Mode.Throughput})
+    @BenchmarkMode({Mode.AverageTime})
     @Measurement(iterations = 1, time = 10, timeUnit = TimeUnit.MILLISECONDS)
     @Warmup(iterations = 1, time = 1, timeUnit = TimeUnit.MILLISECONDS)
     @Fork(0)
@@ -24,7 +24,7 @@ public class TasksShoutBenchmark {
     }
 
     @Benchmark
-    @BenchmarkMode({Mode.AverageTime, Mode.Throughput})
+    @BenchmarkMode({Mode.AverageTime})
     @Measurement(iterations = 1, time = 10, timeUnit = TimeUnit.MILLISECONDS)
     @Warmup(iterations = 1, time = 1, timeUnit = TimeUnit.MILLISECONDS)
     @Fork(0)

@@ -68,11 +68,8 @@ public interface ITasks {
         System.out.println(Thread.currentThread() + "..end");
      }
 
-     Consumer<Integer> forThreadLocal = (l) -> {
-         //Todo: make it 1 line w/ IntStream
-         for (int i = 0; i < l; i++)
-             System.out.println(logContextHolder.get() + i);
-     };
+     Consumer<Integer> forThreadLocal = (l) -> IntStream.range(0, l)
+                                                        .forEach((i) -> System.out.println(logContextHolder.get() + i));
      Consumer<Integer> forSynchronized = (l) -> {
          for (int i = 0; i < l; i++)
             synchronized (ITasks.class) { System.out.println(log.get() + i); }

@@ -21,6 +21,8 @@ public class TasksSumBenchmark {
        bh.consume(ITaskCompletableSum.sum.apply(LAST));
     }
 
+    //Todo: impl. multithreaded sum (completable sum) & (ForkJoin sum)
+
     public static void main(String[] args) throws RunnerException {
 
         /* jmh multi threading

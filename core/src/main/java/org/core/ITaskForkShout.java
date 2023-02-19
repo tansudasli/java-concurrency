@@ -53,8 +53,9 @@ class ITaskForkShout extends RecursiveAction {
     @Override
     protected void compute() {
 
+        //Todo: impl. THRESHOLD mechanism like in ITaskForSum
         if ((last - first) > base) {
-            //Todo: create separate tasks | slice big task into small tasks then invoke, execute, submit etc..
+            //whole-task sliced into 2 small-task
 
             System.out.println("Pending tasks: " + getQueuedTaskCount());
 
