@@ -20,6 +20,7 @@ public class Main {
      */
     public static void main(String[] args) {
 
+        //Todo: merge multithreaded concepts from java-fundamentals
 
         employeesGeneratorFactoryService.off().forEach(System.out::println);
         employees.stream().forEach(System.out::println);
