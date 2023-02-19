@@ -176,8 +176,8 @@ Many frameworks (spring webflux or RxJava) available. Main problem is
 ## how to run
 Project scope and java command scopes have different things! So Some key points to consider are:
 
-- ` ./gradlew clean jar jmhJar`
-- `java  - cp core/build/libs/core-1.0-SNAPSHOT.jar org.core.Main..... ` to run Mainxxx classes.
-- `java  - cp core/build/libs/core-1.0-SNAPSHOT-jmh.jar org.core.TasksThreadSafeBenchmark` to run JMH benchmark tests. Or you can 
+- ` ./gradlew clean build jar jmhJar`
+- `java  - cp core/build/libs/java-concurrency-1.0-SNAPSHOT.jar org.core.Main..... ` to run Mainxxx classes.
+- `java  - cp core/build/libs/java-concurrency-1.0-SNAPSHOT-jmh.jar org.core.TasksThreadSafeBenchmark` to run JMH benchmark tests. Or you can 
 run via IDE (install jetbrains-jmh plugin).
  

@@ -1,11 +1,11 @@
 plugins {
     id 'java'
-    id 'application' //adds the run task. also add Application {main-class}
-//    id 'java-library' //adds the api command!
-//    id "me.champeau.jmh" version "0.6.7"   //jmh benchmarking plugin
+    id 'application'  //adds the run task. also add Application {main-class}
+//    id 'java-library' //adds api command!
+    id "me.champeau.jmh" version "0.6.7"   //jmh benchmarking plugin
 }
 
-group 'org.example'
+group 'org.core'
 version '1.0-SNAPSHOT'
 java.sourceCompatibility JavaVersion.VERSION_17
 
@@ -13,46 +13,36 @@ java.sourceCompatibility JavaVersion.VERSION_17
  * add below to use 'java -jar ..' command!
  * else use 'gradle run' or 'java -cp ...jar className'
  */
-//jar {
-//    manifest {
-//        attributes('Implementation-Title': 'Gradle Sandbox',
-//                'Implementation-Version': archiveVersion,
-////                   'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
-//                'Main-Class': 'HelloWorld')
-//
-//    }
-//}
+jar {
+    manifest {
+        attributes('Implementation-Title': 'Gradle Sandbox',
+                'Implementation-Version': archiveVersion,
+//                   'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'org.core.Main')
+
+    }
+}
 
 // for gradle run task
 // Define the (full path) main class for the application.
-//application {
-//
-//    mainClass = 'org.core.Main'
-//}
+application {
+
+    mainClass = 'org.core.Main'
+}
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    /**
-     * dependency, for build/run tasks
-     * but, java commands, use -cp to add core project jar!!
-     */
-//    implementation project(':core')
-
-    //  src/test folder related libs
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
-
-//    src/main folder related libs
-//    implementation ....
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
 
     //for src.jmh folder.. package names must be same!
-//    jmh 'org.openjdk.jmh:jmh-core:1.35'
-//    jmh 'org.openjdk.jmh:jmh-generator-annprocess:1.35'
+    jmh 'org.openjdk.jmh:jmh-core:1.35'
+    jmh 'org.openjdk.jmh:jmh-generator-annprocess:1.35'
 
     //that solves the missing /META-INF/BenchmarkList error
-//    jmhAnnotationProcessor 'org.openjdk.jmh:jmh-generator-annprocess:1.35'
+    jmhAnnotationProcessor 'org.openjdk.jmh:jmh-generator-annprocess:1.35'
 }
 
 test {
