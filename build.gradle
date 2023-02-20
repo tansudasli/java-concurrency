@@ -7,7 +7,7 @@ plugins {
 
 group 'org.core'
 version '1.0-SNAPSHOT'
-java.sourceCompatibility JavaVersion.VERSION_17
+java.sourceCompatibility JavaVersion.VERSION_19
 
 /* for multiple modules, inject into related build.gradle
  * add below to use 'java -jar ..' command!
